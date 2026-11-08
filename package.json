@@ -1,0 +1,38 @@
+{
+  "name": "peranti-enterprise-mvp",
+  "version": "2.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:deploy": "wrangler pages deploy .vercel/output/static",
+    "worker:dev": "wrangler dev backend/src/index.ts",
+    "worker:deploy": "wrangler deploy backend/src/index.ts",
+    "db:setup": "wrangler d1 execute peranti_db --local --file=./backend/schema.sql"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "hono": "^4.2.8",
+    "framer-motion": "^11.2.6",
+    "lucide-react": "^0.378.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.3.0",
+    "jose": "^5.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8",
+    "wrangler": "^3.50.0",
+    "@cloudflare/next-on-pages": "^1.11.0",
+    "vercel": "^34.1.0"
+  }
+}
